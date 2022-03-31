@@ -16,47 +16,55 @@ package dijkstra;
  * @author Qualitaets- und UnterstuetzungsAgentur - Landesinstitut fuer Schule
  * @version Oktober 2015
  */
-public class Vertex{
+public class Vertex {
   //Einmalige ID des Knotens und Markierung
   private String id;
   private boolean mark;
   private int distanz;
-  
+  private Vertex pre ;
+
   /**
-  * Ein neues Objekt vom Typ Vertex wird erstellt. Seine Markierung hat den Wert false.
-  */
-  public Vertex(String pID){
+   * Ein neues Objekt vom Typ Vertex wird erstellt. Seine Markierung hat den Wert false.
+   */
+  public Vertex(String pID) {
     id = pID;
     mark = false;
     distanz = Integer.MAX_VALUE;
   }
-  
+
   /**
-  * Die Anfrage liefert die ID des Knotens als String.
-  */
-  public String getID(){
+   * Die Anfrage liefert die ID des Knotens als String.
+   */
+  public String getID() {
     return new String(id);
   }
-  
+
   /**
-  * Der Auftrag setzt die Markierung des Knotens auf den Wert pMark.
-  */
-  public void setMark(boolean pMark){
+   * Der Auftrag setzt die Markierung des Knotens auf den Wert pMark.
+   */
+  public void setMark(boolean pMark) {
     mark = pMark;
   }
-  
+
   /**
-  * Die Anfrage liefert true, wenn die Markierung des Knotens den Wert true hat, ansonsten false.
-  */
-  public boolean isMarked(){
+   * Die Anfrage liefert true, wenn die Markierung des Knotens den Wert true hat, ansonsten false.
+   */
+  public boolean isMarked() {
     return mark;
   }
 
-  public int getDistanz()
-  {
+  public int getDistanz() {
     return distanz;
   }
-  public void setDistanz(int pDistanz){
+
+  public void setDistanz(int pDistanz) {
     distanz = pDistanz;
+  }
+
+  public void setPre(Vertex pVertex) {
+    pre = pVertex;
+  }
+  public Vertex getPre(){
+    return pre;
   }
 }
